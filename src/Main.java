@@ -1,7 +1,12 @@
 //鼠标事件隐藏和显现效果
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Main extends JFrame{
     public void mainPanel(){
@@ -19,22 +24,18 @@ public class Main extends JFrame{
 
 
 
-        JLabel leftLabel=new JLabel("left");
+
         JLabel rightLabel=new JLabel("RIGHT");
-        ImageIcon logo=new ImageIcon("C:\\Users\\dell\\IdeaProjects\\Blad eagle\\res\\logo.png");
-        ImageIcon search=new ImageIcon("C:\\Users\\dell\\IdeaProjects\\Blad eagle\\res\\search.png");
+        ImageIcon logo=new ImageIcon("C:\\Users\\lb200\\IdeaProjects\\Bald-eagle\\res\\logo.png");
+        ImageIcon search=new ImageIcon("C:\\Users\\lb200\\IdeaProjects\\Bald-eagle\\res\\search.png");
+        JLabel leftLabel=new JLabel("LEFT");
         JLabel logoLabel=new JLabel(logo);
         JLabel emptyLabel=new JLabel("背景板");
         JLabel titleLabel=new JLabel("标题");
         JLabel search_logoLabel=new JLabel(search);
 
         leftLabel.setPreferredSize(new Dimension(scr_width/2,scr_height));
-
-
-        leftLabel.setBackground(Color.RED);
-        leftLabel.setOpaque(true);
-
-
+        emptyLabel.setPreferredSize(new Dimension(570,370));
         mainFrame.setVisible(true);
 
 
@@ -48,12 +49,48 @@ public class Main extends JFrame{
         main_PanelLayout.putConstraint(SpringLayout.WEST,rightLabel,0,SpringLayout.EAST,leftLabel);
 
         main_PanelLayout.putConstraint(SpringLayout.NORTH,logoLabel,500,SpringLayout.NORTH,main_Panel);
-        main_PanelLayout.putConstraint(SpringLayout.WEST,leftLabel,500,SpringLayout.WEST,main_Panel);
+        main_PanelLayout.putConstraint(SpringLayout.WEST,logoLabel,500,SpringLayout.WEST,main_Panel);
+
+        main_PanelLayout.putConstraint(SpringLayout.NORTH,emptyLabel,500,SpringLayout.NORTH,main_Panel);
+        main_PanelLayout.putConstraint(SpringLayout.WEST,emptyLabel,500,SpringLayout.WEST,main_Panel);
+
+
+
 
 
         main_Panel.add(leftLabel);
         main_Panel.add(rightLabel);
+        main_Panel.add(emptyLabel);
+        main_Panel.add(titleLabel);
         main_Panel.add(logoLabel);
+
+
+        leftLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+                if (e.getSource()!=logoLabel) {
+                    logoLabel.setBackground(new Color(205, 205, 205, 100));
+                    logoLabel.setBorder(new EmptyBorder(30, 30, 30, 30));
+                    logoLabel.setOpaque(true);
+                    logoLabel.setVisible(true);
+                    System.out.println("987");
+                }else {
+                    System.out.println("123");
+                }
+
+            }
+            @Override
+            public void mouseExited(MouseEvent e) {
+                super.mouseExited(e);
+                logoLabel.setVisible(false);
+            }
+        });
+
+
+
+
+
 
 
 
