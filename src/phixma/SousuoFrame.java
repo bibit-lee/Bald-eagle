@@ -15,7 +15,7 @@ public class SousuoFrame {
          Container c=jFrame.getContentPane();
          SousuokuangPanel j1=new SousuokuangPanel();
          ssk=j1.SousuokuangPanel();
-         ssk.setLocation(100,100);
+         ssk.setLocation(scr_height*6/100,scr_height*6/100);
          c.add(ssk);
          c.setVisible(true);
          jFrame.setVisible(true);
