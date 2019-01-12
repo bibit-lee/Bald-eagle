@@ -21,7 +21,7 @@ public class SearchPanel extends JPanel{  //创建搜索框类，并继承面板
         按钮的尺寸为图标的尺寸
         去除按钮边框
         */
-        jPanel.setSize(SearchFrame.scr_width*41/100+icon_width, SearchFrame.scr_height*6/100);
+        jPanel.setSize(SearchFrame2.scr_width*41/100+icon_width, SearchFrame2.scr_height*6/100);
         jButton.setPreferredSize(new Dimension(icon_width,icon_height));
         jButton.setBorder(new EmptyBorder(0,0,0,0));
         jButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -31,7 +31,7 @@ public class SearchPanel extends JPanel{  //创建搜索框类，并继承面板
         设置文本框为无边框，输入内容距两端50像素
         设置文本框字体样式
          */
-        jTextField.setPreferredSize(new Dimension(SearchFrame.scr_width*40/100, SearchFrame.scr_height*4/100));
+        jTextField.setPreferredSize(new Dimension(SearchFrame2.scr_width*40/100, SearchFrame2.scr_height*4/100));
         jTextField.setBorder(new EmptyBorder(0,50,0,50));
         jTextField.setFont(new Font("微软雅黑",Font.BOLD,32));
 
@@ -39,12 +39,12 @@ public class SearchPanel extends JPanel{  //创建搜索框类，并继承面板
         jPanel.add(jButton);   //面板添加按钮
 
         //设置组件布局
-        springLayout.putConstraint(SpringLayout.NORTH,jTextField, SearchFrame.scr_height/100,SpringLayout.NORTH,jPanel);
+        springLayout.putConstraint(SpringLayout.NORTH,jTextField, SearchFrame2.scr_height/100,SpringLayout.NORTH,jPanel);
         springLayout.putConstraint(SpringLayout.WEST,jTextField,0,SpringLayout.WEST,jPanel);
 
-        springLayout.putConstraint(SpringLayout.NORTH,jButton,(SearchFrame.scr_height*6/100-icon_height)/2,SpringLayout.NORTH,jPanel);
+        springLayout.putConstraint(SpringLayout.NORTH,jButton,(SearchFrame2.scr_height*6/100-icon_height)/2,SpringLayout.NORTH,jPanel);
         springLayout.putConstraint(SpringLayout.WEST,jButton,0,SpringLayout.EAST,jTextField);
-        springLayout.putConstraint(SpringLayout.EAST,jButton,-(SearchFrame.scr_width/100),SpringLayout.EAST,jPanel);
+        springLayout.putConstraint(SpringLayout.EAST,jButton,-(SearchFrame2.scr_width/100),SpringLayout.EAST,jPanel);
 
 
 
