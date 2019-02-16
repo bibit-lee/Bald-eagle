@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .one{
+        font-family: 微软雅黑;
+        font-size: 25px;
+        color:rgb(54,54,54);
+    }
+    .two{
+        font-family: 宋体;
+        font-size: 20px;
+        color:blue;
+    }
+    .three{
+        font-family: "Microsoft JhengHei Light";
+        font-size: 0.75em;
+        color:yellowgreen;
+    }
+    #first{
+        font-size: 20px;
+    }
+</style>
+<head>
+    <script language="javascript">
+        var price=992;				//定义商品单价
+        var number=10;			//定义商品数量
+        var sum=price*number;		//计算商品金额
+        alert(sum);				//显示商品金额
+    </script>
+    <meta charset="UTF-8">
+    <title>网页形状</title>
+    <script src="js1.js"></script>
+</head>
+<body>
+<table>
+    <tr class="one">
+        <td><p style="color: aqua;font-size: 22px"> 用户名：</p></td>
+        <td><input name="username" type="text" id="UserName4" maxlength="20"></td>
+    </tr>
+    <tr class="two">
+        <td>密码：</td>
+        <td><input name="pwd1" type="password" id="first" size="20" maxlength="20" ></td>
+    </tr>
+    <tr class="three">
+        <td>确认密码：</td>
+        <td><input name="pwd2" type="password" id="PWD25" SIZE="20" maxlength="20"></td>
+    </tr>
+    <tr>
+        <td>性别：</td>
+        <td><input name="sex" type="radio" class="noborder" value="男">男&nbsp
+        <input name="sex" type="radio" class="noborder" value="女">女</td>
+    </tr>
+    <tr>
+        <td>爱好：</td>
+        <td><input name="like" type="checkbox" id="like1" value="体育">体育
+        <input name="like" type="checkbox" id="like2" value="旅游">旅游
+        <input name="like" type="checkbox" id="like3" value="听音乐">听音乐
+        <input name="like" type="checkbox" id="like4" value="看书">看书
+        </td>
+    </tr>
+    <tr>
+        <td>E-mail：</td>
+        <td><input name="sumbit" type="submit" onclick="show()" class="" value="确定保存">
+        <input name="reset" type="reset" class="" value="重新填写">
+        <input name="save" type="button" class="" value="保存">
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>下拉列表框
+            <select name="select">
+                <option>数码相机区</option>
+                <option>摄影器材区</option>
+                <option>MP3/MP4/MP5</option>
+                <option>U盘/移动硬盘</option>
+            </select>
+            &nbsp;多行列表框（不可多选）：
+            <select name="select2" size="2">
+                <option>数码相机区</option>
+                <option>摄影器材区</option>
+                <option>MP3/MP4/MP5</option>
+                <option>U盘/移动硬盘</option>
+            </select>
+            &nbsp;多行列表框（可多选）：
+            <select name="select3" size="3" multiple>
+                <option>数码相机区</option>
+                <option>摄影器材区</option>
+                <option>MP3/MP4/MP5</option>
+                <option>U盘/移动硬盘</option>
+            </select>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
