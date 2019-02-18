@@ -35,11 +35,13 @@ public class MainFrame extends JFrame{   //创建主窗体
         TopLabel a=new TopLabel();   //实例化顶部标题类
         JLabel topLabel=a.topLabel();  //获取顶部标题类实例方法
 
-
         ImageIcon backIcon=new ImageIcon("res/homepage-models@2x.jpg");  //实例化背景图片
         JLabel backLabel=new JLabel(backIcon);  //实例化空标签，并添加图片
         ImageIcon backIcon1=new ImageIcon("res/homepage-models.jpg");
         JLabel backLabel1=new JLabel(backIcon1);
+        ImageIcon imageIcon=new ImageIcon("res/homepage-models.jpg");
+        imageIcon.setImage(imageIcon.getImage().getScaledInstance(ScreenSize.scr_width,ScreenSize.scr_height,Image.SCALE_DEFAULT));
+
         Title t=new Title();   //实例化菜单类面板
         JPanel titlePanel=t.title();  //获取菜单类面板实例方法
         Jlayered jlayered =new Jlayered();  //实例化1类层面板
@@ -58,30 +60,22 @@ public class MainFrame extends JFrame{   //创建主窗体
         container.add(titlePanel);
         container.add(jlpn1);
         container.add(jlpn2);
-        jFrame.setVisible(true);  //设置窗体可视
+
 
 
         if (ScreenSize.scr_width>=2160& ScreenSize.scr_width<=2880){
             container.add(backLabel);
-            springLayout.putConstraint(SpringLayout.NORTH,backLabel,0,SpringLayout.NORTH,container);
-            springLayout.putConstraint(SpringLayout.WEST,backLabel,0,SpringLayout.WEST,container);
-            springLayout.putConstraint(SpringLayout.EAST,backLabel,0,SpringLayout.EAST,container);
-            springLayout.putConstraint(SpringLayout.SOUTH,backLabel,0,SpringLayout.SOUTH,container);
+            backLabel.setBounds(0,0,ScreenSize.scr_width,ScreenSize.scr_height);
         }else if (ScreenSize.scr_width>=1440& ScreenSize.scr_width<2160){
-            ImageIcon icon=new ImageIcon(new ImageIcon("res/homepage-models.jpg").getImage().getScaledInstance
-                    (ScreenSize.scr_width, ScreenSize.scr_height,Image.SCALE_FAST));
-            JLabel backLabel2=new JLabel(icon);
+
+            JLabel backLabel2=new JLabel(imageIcon);
             container.add(backLabel2);
-            springLayout.putConstraint(SpringLayout.NORTH,backLabel2,0,SpringLayout.SOUTH,container);
-            springLayout.putConstraint(SpringLayout.WEST,backLabel2,0,SpringLayout.WEST,container);
-            springLayout.putConstraint(SpringLayout.EAST,backLabel2,0,SpringLayout.EAST,container);
-            springLayout.putConstraint(SpringLayout.SOUTH,backLabel2,0,SpringLayout.SOUTH,container);
+            backLabel2.setBounds(0,0,ScreenSize.scr_width,ScreenSize.scr_height);
+
+
         }else if (ScreenSize.scr_width<1440){
             container.add(backLabel1);
-            springLayout.putConstraint(SpringLayout.NORTH,backLabel1,0,SpringLayout.NORTH,container);
-            springLayout.putConstraint(SpringLayout.WEST,backLabel1,0,SpringLayout.WEST,container);
-            springLayout.putConstraint(SpringLayout.EAST,backLabel1,0,SpringLayout.EAST,container);
-            springLayout.putConstraint(SpringLayout.SOUTH,backLabel1,0,SpringLayout.SOUTH,container);
+            backLabel1.setBounds(0,0,ScreenSize.scr_width,ScreenSize.scr_height);
         }
 
 
@@ -128,6 +122,7 @@ public class MainFrame extends JFrame{   //创建主窗体
                 container.setVisible(true);
             }
         });
+        jFrame.setVisible(true);  //设置窗体可视
 
     }
 

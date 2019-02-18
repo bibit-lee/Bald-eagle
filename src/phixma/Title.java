@@ -136,8 +136,9 @@ public class Title {  //创建主窗体菜单类
                 springLayout.putConstraint(SpringLayout.NORTH,exittitle,ScreenSize.scr_height*2/100,SpringLayout.NORTH,jPanel);
                 springLayout.putConstraint(SpringLayout.WEST,exittitle,ScreenSize.scr_height*10/100,SpringLayout.EAST,j1_SalesStatistics );
 
-                jPanel.setVisible(false);
-                jPanel.setVisible(true);
+                MainFrame.container.setVisible(false);
+                MainFrame.container.setVisible(true);
+
             }
         });
 
@@ -162,7 +163,7 @@ public class Title {  //创建主窗体菜单类
                 super.mousePressed(e);
                 MainFrame.jlpn1.setVisible(true);
                 MainFrame.jlpn2.setVisible(false);
-
+                j1_Order.setForeground(new Color(255,255,255,120));
                 jPanel.removeAll();
                 jPanel.add(j1Sell);
                 jPanel.add(j2Purchase);

@@ -16,7 +16,7 @@ public class Fonts {
 
         }else if(ScreenSize.scr_width<1600){
 
-            font=new Font("Microsoft YaHei UI",Font.BOLD,24);
+            font=new Font("Microsoft YaHei UI",Font.BOLD,18);
         }
         return font;
     }
@@ -33,7 +33,7 @@ public class Fonts {
 
         }else if(ScreenSize.scr_width<1600){
 
-            font=new Font("Microsoft YaHei UI",Font.BOLD,20);
+            font=new Font("Microsoft YaHei UI",Font.BOLD,15);
         }
         return font;
     }
@@ -81,7 +81,7 @@ public class Fonts {
             font=(new Font("Microsoft YaHei UI",Font.PLAIN,20));
         }
         if (ScreenSize.scr_width<1600){
-            font=(new Font("Microsoft YaHei UI",Font.PLAIN,16));
+            font=(new Font("Microsoft YaHei UI",Font.PLAIN,12));
         }
         return font;
 

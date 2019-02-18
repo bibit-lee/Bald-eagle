@@ -1,9 +1,6 @@
 package jlayeredpanel.jlayered2;
 
-import item.Draw;
-import item.Fonts;
-import item.ScreenSize;
-import item.TabelModels;
+import item.*;
 import phixma.MainFrame;
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +10,8 @@ import java.awt.event.MouseEvent;
 
 public class J2C3Operation {
     public static JPanel jPanel;
+    public static JTable topTransaction6;
+    public static JLabel exit;
 
     public JPanel getC3Info(){
 
@@ -24,7 +23,7 @@ public class J2C3Operation {
         JLabel step1Label=new JLabel("第一步：快速选择客户",SwingConstants.CENTER);
         step1Label.setFont(Fonts.getFontH1Bold());
 
-        JLabel exit=new JLabel("×",SwingConstants.CENTER);
+        exit=new JLabel("×",SwingConstants.CENTER);
         exit.setFont(Fonts.getSymbolHmax());
         exit.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
@@ -33,7 +32,11 @@ public class J2C3Operation {
         usersearch.setPreferredSize(new Dimension(ScreenSize.scr_width*40/100,ScreenSize.scr_height*12/100+2));
 
         TabelModels tabelModels=new TabelModels();
-        JTable topTransaction6=tabelModels.getClient();
+        topTransaction6=tabelModels.getClient();
+        topTransaction6.setVisible(false);
+
+
+
 
 
 
@@ -47,7 +50,7 @@ public class J2C3Operation {
         springLayout.putConstraint(SpringLayout.WEST,usersearch,0,SpringLayout.WEST,jPanel);
         springLayout.putConstraint(SpringLayout.EAST,usersearch,0,SpringLayout.EAST,jPanel);
 
-        springLayout.putConstraint(SpringLayout.NORTH,topTransaction6,0,SpringLayout.SOUTH,usersearch);
+        springLayout.putConstraint(SpringLayout.NORTH,topTransaction6,ScreenSize.scr_height*1/100,SpringLayout.SOUTH,usersearch);
         springLayout.putConstraint(SpringLayout.WEST,topTransaction6,ScreenSize.scr_width*2/100,SpringLayout.WEST,jPanel);
         springLayout.putConstraint(SpringLayout.EAST,topTransaction6,-ScreenSize.scr_width*2/100,SpringLayout.EAST,jPanel);
         springLayout.putConstraint(SpringLayout.SOUTH,topTransaction6,0,SpringLayout.SOUTH,jPanel);
@@ -65,6 +68,7 @@ public class J2C3Operation {
                 int i=e.getButton();
                 if (i==MouseEvent.BUTTON1) {
                     jPanel.setVisible(false);
+                    topTransaction6.setVisible(false);
                     Jlayered2.c3Info.setBounds(ScreenSize.scr_width*30/100, ScreenSize.scr_height*10/100, ScreenSize.scr_width*40/100, ScreenSize.scr_height*24/100);
                     J2C4light.lightPanel.setVisible(false);
                     MainFrame.light.setVisible(false);

@@ -2,7 +2,6 @@ package jlayeredpanel.jlayered2;
 
 
 import item.ScreenSize;
-
 import javax.swing.*;
 
 

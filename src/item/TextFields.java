@@ -1,6 +1,7 @@
 package item;
 
 
+import jlayeredpanel.jlayered2.J2C3Operation;
 import jlayeredpanel.jlayered2.Jlayered2;
 
 import javax.swing.*;
@@ -54,6 +55,7 @@ public class TextFields {
                 int i=e.getButton();
                 if (i==MouseEvent.BUTTON1){
                     Jlayered2.c3Info.setBounds(ScreenSize.scr_width*30/100, ScreenSize.scr_height*10/100, ScreenSize.scr_width*40/100, ScreenSize.scr_height*60/100);
+                    J2C3Operation.topTransaction6.setVisible(true);
 
                 }
             }
