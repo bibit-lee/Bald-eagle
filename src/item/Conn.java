@@ -5,9 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conn {                                  //创建连接类
+    private Connection con;
+    private Connection con1;
 
     public Connection getCon(){                      //连接方法
-        Connection con=null;                          //声明连接类对象
+                             //声明连接类对象
         try {                                        //捕捉异常
             Class.forName("com.mysql.jdbc.Driver");  //加载数据库驱动
             System.out.println("数据库驱动加载成功");    //输出加载驱动信息
@@ -27,7 +29,7 @@ public class Conn {                                  //创建连接类
     }
 
     public Connection getCon1(){                      //连接方法
-        Connection con1=null;                          //声明连接类对象
+                             //声明连接类对象
         try {                                        //捕捉异常
             Class.forName("com.mysql.jdbc.Driver");  //加载数据库驱动
             System.out.println("数据库驱动加载成功");    //输出加载驱动信息
@@ -43,6 +45,10 @@ public class Conn {                                  //创建连接类
             e.printStackTrace();
         }
         return con1;                                     //返回连接
+    }
+
+    public static void main(String[] args) {
+        new Conn().getCon();
     }
 
 }

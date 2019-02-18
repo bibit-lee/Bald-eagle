@@ -1,6 +1,5 @@
 package item;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,9 +8,7 @@ import java.sql.Statement;
 public class Res {  //创建数据集类
     static Conn a=new Conn();   //实例化连接类对象
     ResultSet res;    //声明数据集类对象
-    static ResultSet topTransaction6;
-
-
+    private ResultSet topTransaction6;
 
 
     public ResultSet getSPLocalSearchRes(){    //获取本地数据集方法
@@ -67,7 +64,25 @@ public class Res {  //创建数据集类
         return client;
     }
 
+    public void settopTransaction6(ResultSet topTransaction6){
 
+        this.topTransaction6=topTransaction6;
 
+    }
+    public ResultSet gettopTransaction6(){
+        Connection con=a.getCon();
+        try{
+            Statement sql=con.createStatement();
+            topTransaction6=sql.executeQuery("SELECT * FROM client ORDER BY TransactionLastMonth DESC LIMIT 6");
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return topTransaction6;
+    }
+
+    public static void main(String[] args) {
+        new Res().gettopTransaction6();
+    }
 
 }

@@ -3,7 +3,6 @@ package item;
 
 import jlayeredpanel.jlayered2.J2C3Operation;
 import jlayeredpanel.jlayered2.J2C4light;
-import jlayeredpanel.jlayered2.J2C5ViewPanel;
 import jlayeredpanel.jlayered2.Jlayered2;
 import phixma.MainFrame;
 
@@ -14,32 +13,34 @@ import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 
 public class TabelModels {
     public static DefaultTableModel tableModel;
-    public static TableColumn tcClientName;
-    public static TableColumn tcContacts;
-    public static TableColumn tcTelephone;
-    public static TableColumn tcAddress;
     public static String sClientName;
     public static String sContacts;
     public static String sTelephone;
     public static String sAddress;
 
 
-
-
     public JTable getClient(){
-
-        Conn b=new Conn();   //实例化连接类对象
-        Connection con=b.getCon();  //获取数据库连接类实例方法
-
         tableModel=new DefaultTableModel();
-        tableModel.setColumnIdentifiers(new Object[]{"","","",""});//设置表格头名称
+        tableModel.setColumnIdentifiers(new Object[]{"col0","col1","col2","col3"});//设置类名
+        Res res=new Res();
+        ResultSet topTransaction6=res.gettopTransaction6();
+        try{
+            while (topTransaction6.next()){
+                String ClientName=topTransaction6.getString("ClientName");
+                String Contacts=topTransaction6.getString("Contacts");
+                String Telephone=topTransaction6.getString("Telephone");
+                String Address=topTransaction6.getString("Address");
+                tableModel.addRow(new Object[]{ClientName,Contacts,Telephone,Address});
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
 
         JTable jTable=new JTable(tableModel){
             public boolean isCellEditable(int row, int column)
@@ -58,10 +59,27 @@ public class TabelModels {
         jTable.setEnabled(false);
 
         TableColumnModel tcm=jTable.getColumnModel();
-        tcClientName=tcm.getColumn(0);
-        tcContacts=tcm.getColumn(1);
-        tcTelephone=tcm.getColumn(2);
-        tcAddress=tcm.getColumn(3);
+        TableColumn tcTelephone=tcm.getColumn(2);
+        TableColumn tcAddress=tcm.getColumn(3);
+
+        tcTelephone.setWidth(0);
+        tcTelephone.setMaxWidth(0);
+        tcTelephone.setMinWidth(0);
+        tcTelephone.setPreferredWidth(0);
+
+        tcAddress.setWidth(0);
+        tcAddress.setMaxWidth(0);
+        tcAddress.setMinWidth(0);
+        tcAddress.setPreferredWidth(0);
+
+        jTable.getTableHeader().getColumnModel().getColumn(2).setMaxWidth(0);
+        jTable.getTableHeader().getColumnModel().getColumn(2).setMinWidth(0);
+        jTable.getTableHeader().getColumnModel().getColumn(3).setMaxWidth(0);
+        jTable.getTableHeader().getColumnModel().getColumn(3).setMinWidth(0);
+
+
+
+
 
         jTable.addMouseMotionListener(new MouseAdapter() {
             @Override
@@ -71,7 +89,6 @@ public class TabelModels {
                 //如果表格行为空则返回-1，则选中范围将报错，使用不能为-1
                 if (row!=-1) {
                     jTable.setRowSelectionInterval(row, row);  //设置选中的索引行范围：从n行到n行
-
                 }
             }
         });
@@ -96,31 +113,16 @@ public class TabelModels {
                     Jlayered2.c3Info.setBounds(ScreenSize.scr_width*30/100, ScreenSize.scr_height*10/100, ScreenSize.scr_width*40/100, ScreenSize.scr_height*24/100);
                     J2C4light.lightPanel.setVisible(false);
                     MainFrame.light.setVisible(false);
-                    J2C5ViewPanel.jLabel.setVisible(true);
-
 
                 }
             }
         });
 
-
-        try{
-            Statement sql=con.createStatement();
-            ResultSet topTransaction6=sql.executeQuery("SELECT * FROM client ORDER BY TransactionLastMonth DESC LIMIT 6");
-            while (topTransaction6.next()){
-                String ClientName=topTransaction6.getString("ClientName");
-                String Contacts=topTransaction6.getString("Contacts");
-                String Telephone=topTransaction6.getString("Telephone");
-                String Address=topTransaction6.getString("Address");
-                tableModel.addRow(new Object[]{ClientName,Contacts,Telephone,Address});
-
-        }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-
         return jTable;
+    }
+
+    public static void main(String[] args) {
+        new TabelModels().getClient();
     }
 
 }

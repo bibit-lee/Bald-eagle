@@ -3,6 +3,8 @@ package jlayeredpanel.jlayered2;
 import item.*;
 import phixma.MainFrame;
 import javax.swing.*;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
