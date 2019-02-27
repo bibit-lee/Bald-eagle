@@ -37,7 +37,6 @@ public class J2C3Operation {
         emptyPanel.setBackground(Color.WHITE);
         TabelModels tabelModels=new TabelModels();
         topTransaction6=tabelModels.getClient();
-        topTransaction6.setVisible(false);
         topTransaction6.setBounds(0,0,ScreenSize.scr_width*40/100,ScreenSize.scr_height);
         emptyPanel.add(topTransaction6);
 
@@ -66,6 +65,7 @@ public class J2C3Operation {
 
 
 
+
         exit.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -73,9 +73,6 @@ public class J2C3Operation {
                 int i=e.getButton();
                 if (i==MouseEvent.BUTTON1) {
 
-                    jPanel.setVisible(false);
-                    topTransaction6.setVisible(false);
-                    emptyPanel.removeAll();
                     Jlayered2.c3Info.setBounds(ScreenSize.scr_width*30/100, ScreenSize.scr_height*10/100, ScreenSize.scr_width*40/100, ScreenSize.scr_height*24/100);
                     J2C4light.lightPanel.setVisible(false);
                     MainFrame.light.setVisible(false);
@@ -90,6 +87,8 @@ public class J2C3Operation {
                     J2C5ViewPanel.addressTitle.setText("");
                     J2C5ViewPanel.choiceLabel.setText("");
                     TextFields.j2ClientSearchField.setText("");
+
+                    jPanel.setVisible(false);
 
                 }
             }

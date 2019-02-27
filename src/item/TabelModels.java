@@ -10,8 +10,6 @@ public class TabelModels {
     private JTable jTable;
 
 
-
-
     public JTable getClient(){
         tableModel=new DefaultTableModel();
         tableModel.setColumnIdentifiers(new Object[]{"col0","col1","col2","col3"});//设置类名
