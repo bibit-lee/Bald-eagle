@@ -1,9 +1,6 @@
 package phixma;
 
-import item.Fonts;
-import item.Panels;
-import item.ScreenSize;
-import item.Labels;
+import item.*;
 import jlayeredpanel.jlayered1.C3Light;
 import jlayeredpanel.jlayered2.J2C3Operation;
 import jlayeredpanel.jlayered2.J2C4light;
@@ -149,11 +146,11 @@ public class Title {  //创建主窗体菜单类
 
                 J2C4light.lightPanel.setVisible(true);
                 MainFrame.light.setVisible(true);
+                J2C3Operation.emptyPanel.add(J2C3Operation.topTransaction6);
                 J2C3Operation.jPanel.setVisible(true);
                 j1_Order.setForeground(new Color(255,255,255,255));
                 MainFrame.jlpn1.setVisible(false);
                 MainFrame.jlpn2.setVisible(true);
-
 
             }
         });

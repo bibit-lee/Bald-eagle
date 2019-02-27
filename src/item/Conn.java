@@ -47,8 +47,4 @@ public class Conn {                                  //创建连接类
         return con1;                                     //返回连接
     }
 
-    public static void main(String[] args) {
-        new Conn().getCon();
-    }
-
 }

@@ -6,12 +6,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Res {  //创建数据集类
-    static Conn a=new Conn();   //实例化连接类对象
-    ResultSet res;    //声明数据集类对象
-    private ResultSet topTransaction6;
-
 
     public ResultSet getSPLocalSearchRes(){    //获取本地数据集方法
+
+        ResultSet res=null;    //声明数据集类对象
+        Conn a=new Conn();   //实例化连接类对象
         Connection con=a.getCon();  //获取数据库连接类实例方法
         //必须要捕捉连接过程的异常
         try {
@@ -19,12 +18,15 @@ public class Res {  //创建数据集类
         }catch (Exception e){
             e.printStackTrace();
         }
+
         return res;  //返回本地数据集
     }
 
-//创建主窗体顶部标题类数据获取方法
+    //创建主窗体顶部标题类数据获取方法
     public ResultSet getToplabelRes(){
+
         ResultSet toplabel=null;  //实例化数据集对象
+        Conn a=new Conn();   //实例化连接类对象
         Connection con1=a.getCon1();  //获取标题类标签实例方法
         //必须要捕捉连接过程的异常
         try{
@@ -39,6 +41,7 @@ public class Res {  //创建数据集类
 
     public ResultSet getC5Recommend(){
         ResultSet recommend=null;
+        Conn a=new Conn();   //实例化连接类对象
         Connection con=a.getCon1();
 
         try {
@@ -50,26 +53,11 @@ public class Res {  //创建数据集类
         }
         return recommend;
     }
-    public ResultSet client(){
-        ResultSet client =null;
-        Connection con=a.getCon();
 
-        try{
-            String s=TextFields.j2ClientSearchFieldText;
-            Statement sql=con.createStatement();
-            client=sql.executeQuery("SELECT * FROM client WHERE Initials LIKE '%"+s+"%'");
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return client;
-    }
-
-    public void settopTransaction6(ResultSet topTransaction6){
-
-        this.topTransaction6=topTransaction6;
-
-    }
     public ResultSet gettopTransaction6(){
+
+        ResultSet topTransaction6=null;
+        Conn a=new Conn();   //实例化连接类对象
         Connection con=a.getCon();
         try{
             Statement sql=con.createStatement();
@@ -81,8 +69,5 @@ public class Res {  //创建数据集类
         return topTransaction6;
     }
 
-    public static void main(String[] args) {
-        new Res().gettopTransaction6();
-    }
 
 }

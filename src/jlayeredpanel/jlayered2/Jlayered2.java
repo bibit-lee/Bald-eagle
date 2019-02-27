@@ -19,8 +19,8 @@ public class Jlayered2 {
         j2c4Light.setBounds(0,0, ScreenSize.scr_width, ScreenSize.scr_height);
 
         J2C5ViewPanel c5=new J2C5ViewPanel();
-        JPanel j2c5ViewPanel=c5.getJ2C5View();
-        j2c5ViewPanel.setBounds(ScreenSize.scr_width*20/100, ScreenSize.scr_height*5/100, ScreenSize.scr_width*60/100, ScreenSize.scr_height*70/100);
+        JPanel j2c5ViewPanel=c5.getJ2C5ViewSells();
+        j2c5ViewPanel.setBounds(ScreenSize.scr_width*20/100, 0, ScreenSize.scr_width*60/100, ScreenSize.scr_height*80/100);
 
 
 
