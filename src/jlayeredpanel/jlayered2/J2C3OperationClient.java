@@ -8,7 +8,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 
-public class J2C3Operation {
+public class J2C3OperationClient {
     public static JPanel jPanel;
     public static JPanel emptyPanel;
     public static JTable topTransaction6;
@@ -39,6 +39,7 @@ public class J2C3Operation {
         topTransaction6=tabelModels.getClient();
         topTransaction6.setBounds(0,0,ScreenSize.scr_width*40/100,ScreenSize.scr_height);
         emptyPanel.add(topTransaction6);
+        topTransaction6.setVisible(false);
 
 
         springLayout.putConstraint(SpringLayout.NORTH,step1Label,ScreenSize.scr_height*2/100,SpringLayout.NORTH,jPanel);
@@ -88,6 +89,7 @@ public class J2C3Operation {
                     J2C5ViewPanel.choiceLabel.setText("");
                     TextFields.j2ClientSearchField.setText("");
 
+                    emptyPanel.setVisible(false);
                     jPanel.setVisible(false);
 
                 }

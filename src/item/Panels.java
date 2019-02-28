@@ -14,8 +14,8 @@ public class Panels{
         light.setOpaque(true);
         light.setBounds(0,0,ScreenSize.scr_width,ScreenSize.scr_height);
         jPanel.add(light);
-
         return jPanel;   //返回面板实例对象
     }
+
 
 }

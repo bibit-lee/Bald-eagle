@@ -10,7 +10,7 @@ public class Jlayered2 {
     public JLayeredPane jLayeredPane(){
         JLayeredPane jLayeredPane=new JLayeredPane();
 
-        J2C3Operation c3=new J2C3Operation();
+        J2C3OperationClient c3=new J2C3OperationClient();
         c3Info=c3.getC3Info();
         c3Info.setBounds(ScreenSize.scr_width*30/100, ScreenSize.scr_height*10/100, ScreenSize.scr_width*40/100, ScreenSize.scr_height*24/100);
 

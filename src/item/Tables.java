@@ -1,7 +1,7 @@
 package item;
 
 
-import jlayeredpanel.jlayered2.J2C3Operation;
+import jlayeredpanel.jlayered2.J2C3OperationClient;
 import jlayeredpanel.jlayered2.J2C4light;
 import jlayeredpanel.jlayered2.J2C5ViewPanel;
 import jlayeredpanel.jlayered2.Jlayered2;
@@ -90,8 +90,8 @@ public class Tables {
 
                     //如果表格行为空则返回-1，则选中范围将报错，使用不能为-1
                     if (i==MouseEvent.BUTTON1) {
-                        J2C3Operation.jPanel.setVisible(false);
-                        J2C3Operation.topTransaction6.setVisible(false);
+                        J2C3OperationClient.jPanel.setVisible(false);
+                        J2C3OperationClient.emptyPanel.setVisible(false);
                         Jlayered2.c3Info.setBounds(ScreenSize.scr_width*30/100, ScreenSize.scr_height*10/100,ScreenSize.scr_width*40/100,ScreenSize.scr_height*24/100);
                         J2C4light.lightPanel.setVisible(false);
                         MainFrame.light.setVisible(false);
@@ -105,7 +105,10 @@ public class Tables {
                         J2C5ViewPanel.choiceLabel.setText(">");
                         J2C5ViewPanel.selectClient.setVisible(false);
                         TextFields.j2ClientSearchField.setText("");
-                        TextFields.j2ClientSearchField.updateUI();
+
+
+
+
 
                     }
                 }

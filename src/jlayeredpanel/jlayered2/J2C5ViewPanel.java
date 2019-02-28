@@ -2,10 +2,13 @@ package jlayeredpanel.jlayered2;
 
 import item.Fonts;
 import item.ScreenSize;
+import phixma.MainFrame;
+import phixma.Title;
 
 import javax.swing.*;
 import java.awt.*;
-
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 public class J2C5ViewPanel {
@@ -42,7 +45,6 @@ public class J2C5ViewPanel {
         clientInfoPanel.setBackground(Color.PINK);
 
         selectClient=new JLabel("选择客户",SwingConstants.CENTER);
-        selectClient.setBackground(Color.RED);
         selectClient.setFont(Fonts.getFontH2Bold());
         selectClient.setOpaque(true);
         selectClient.setPreferredSize(new Dimension(ScreenSize.scr_width*10/100,ScreenSize.scr_height*6/100));
@@ -136,6 +138,38 @@ public class J2C5ViewPanel {
         //5、操作方式面板
         JPanel operationPanel=new JPanel();
 
+
+        //3、客户信息面板--监听
+        choiceLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+
+                J2C4light.lightPanel.setVisible(true);
+                MainFrame.light.setVisible(true);
+                Title.j1_Order.setForeground(new Color(255,255,255,255));
+                J2C3OperationClient.jPanel.setVisible(true);
+                J2C3OperationClient.emptyPanel.setVisible(false);
+                MainFrame.jlpn1.setVisible(false);
+                MainFrame.jlpn2.setVisible(true);
+
+            }
+        });
+        selectClient.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+
+                J2C4light.lightPanel.setVisible(true);
+                MainFrame.light.setVisible(true);
+                Title.j1_Order.setForeground(new Color(255,255,255,255));
+                J2C3OperationClient.jPanel.setVisible(true);
+                J2C3OperationClient.emptyPanel.setVisible(false);
+                MainFrame.jlpn1.setVisible(false);
+                MainFrame.jlpn2.setVisible(true);
+
+            }
+        });
 
 
         jPanel.add(newSellsLabel);

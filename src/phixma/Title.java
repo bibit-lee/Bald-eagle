@@ -1,8 +1,7 @@
 package phixma;
 
 import item.*;
-import jlayeredpanel.jlayered1.C3Light;
-import jlayeredpanel.jlayered2.J2C3Operation;
+import jlayeredpanel.jlayered2.J2C3OperationClient;
 import jlayeredpanel.jlayered2.J2C4light;
 
 import javax.swing.*;
@@ -11,6 +10,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Title {  //创建主窗体菜单类
+    public static JLabel j1_Order;
     //创建菜单面板实例方法
     public JPanel title(){
 
@@ -53,7 +53,7 @@ public class Title {  //创建主窗体菜单类
 
 
 
-        JLabel j1_Order=Labels.getTitleName();
+        j1_Order=Labels.getTitleName();
         j1_Order.setFont(Fonts.getFontH2Bold());
         j1_Order.setText("开单");
 
@@ -147,7 +147,8 @@ public class Title {  //创建主窗体菜单类
                 J2C4light.lightPanel.setVisible(true);
                 MainFrame.light.setVisible(true);
                 j1_Order.setForeground(new Color(255,255,255,255));
-                J2C3Operation.jPanel.setVisible(true);
+                J2C3OperationClient.jPanel.setVisible(true);
+                J2C3OperationClient.emptyPanel.setVisible(false);
                 MainFrame.jlpn1.setVisible(false);
                 MainFrame.jlpn2.setVisible(true);
 
@@ -167,6 +168,8 @@ public class Title {  //创建主窗体菜单类
                 jPanel.add(j4Finance);
                 jPanel.add(j5Manage);
                 jPanel.add(j6Life);
+
+
 
                 //设置元素布局
                 springLayout.putConstraint(SpringLayout.NORTH,j1Sell,ScreenSize.scr_height*2/100,SpringLayout.NORTH,jPanel);
