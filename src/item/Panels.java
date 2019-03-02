@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Panels{
+    public static JPanel c3InfoPanel;
+    public static JLabel c3InfoExit;
+    public static JPanel c3InfoEmptyPanel;
 
     public JPanel light(){
         JPanel jPanel=new JPanel();
@@ -16,6 +19,5 @@ public class Panels{
         jPanel.add(light);
         return jPanel;   //返回面板实例对象
     }
-
 
 }

@@ -1,6 +1,7 @@
 package item;
 
 import java.awt.*;
+import java.awt.event.FocusListener;
 
 public class Fonts {
 
@@ -82,6 +83,21 @@ public class Fonts {
         }
         if (ScreenSize.scr_width<1600){
             font=(new Font("Microsoft YaHei UI",Font.PLAIN,12));
+        }
+        return font;
+
+    }
+
+    public static Font getFontButtonBig(){
+        Font font=null;
+        if (ScreenSize.scr_width>=2160){
+            font=(new Font("Microsoft YaHei UI",Font.PLAIN,36));  //设置顶部标签字体
+        }
+        if (ScreenSize.scr_width<2160&ScreenSize.scr_width>=1600){
+            font=(new Font("Microsoft YaHei UI",Font.PLAIN,24));
+        }
+        if (ScreenSize.scr_width<1600){
+            font=(new Font("Microsoft YaHei UI",Font.PLAIN,15));
         }
         return font;
 

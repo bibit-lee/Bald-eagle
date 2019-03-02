@@ -23,6 +23,7 @@ public class J2C5ViewPanel {
     public static JLabel addressTitle;
     public static JLabel choiceLabel;
     public static JLabel selectClient;
+    public static JLabel selectCommodity;
 
     public JPanel getJ2C5ViewSells(){
         SpringLayout springLayout=new SpringLayout();
@@ -47,6 +48,7 @@ public class J2C5ViewPanel {
         selectClient=new JLabel("选择客户",SwingConstants.CENTER);
         selectClient.setFont(Fonts.getFontH2Bold());
         selectClient.setOpaque(true);
+        selectClient.setVisible(false);
         selectClient.setPreferredSize(new Dimension(ScreenSize.scr_width*10/100,ScreenSize.scr_height*6/100));
 
         clientNameTitle=new JLabel();
@@ -123,9 +125,10 @@ public class J2C5ViewPanel {
         inventoryPanel.setBackground(Color.GRAY);
 
 
-        JLabel selectCommodity=new JLabel("选择商品",SwingConstants.CENTER);
+        selectCommodity=new JLabel("选择商品",SwingConstants.CENTER);
         selectCommodity.setFont(Fonts.getFontH2Bold());
         selectCommodity.setOpaque(true);
+        selectCommodity.setVisible(false);
         selectCommodity.setPreferredSize(new Dimension(ScreenSize.scr_width*10/100,ScreenSize.scr_height*6/100));
         selectCommodity.setHorizontalAlignment(SwingConstants.CENTER);
 
@@ -163,8 +166,28 @@ public class J2C5ViewPanel {
                 J2C4light.lightPanel.setVisible(true);
                 MainFrame.light.setVisible(true);
                 Title.j1_Order.setForeground(new Color(255,255,255,255));
+                J2C3EmptyPanel.j2C3Panel.setVisible(true);
                 J2C3OperationClient.jPanel.setVisible(true);
                 J2C3OperationClient.emptyPanel.setVisible(false);
+                MainFrame.jlpn1.setVisible(false);
+                MainFrame.jlpn2.setVisible(true);
+
+            }
+        });
+
+        //4、商品明细面板--监听
+        selectCommodity.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+
+                J2C4light.lightPanel.setVisible(true);
+                MainFrame.light.setVisible(true);
+                Title.j1_Order.setForeground(new Color(255,255,255,255));
+                J2C3EmptyPanel.j2C3Panel.setVisible(true);
+                J2C3OperationClient.jPanel.setVisible(false);
+                J2C3OperationCommodity.jPanel.setVisible(true);
+                J2C3OperationCommodity.emptyPanel.setVisible(false);
                 MainFrame.jlpn1.setVisible(false);
                 MainFrame.jlpn2.setVisible(true);
 

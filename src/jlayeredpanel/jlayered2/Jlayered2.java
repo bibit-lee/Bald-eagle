@@ -7,12 +7,14 @@ import javax.swing.*;
 
 public class Jlayered2 {
     public static JPanel c3Info;
+
     public JLayeredPane jLayeredPane(){
         JLayeredPane jLayeredPane=new JLayeredPane();
 
-        J2C3OperationClient c3=new J2C3OperationClient();
-        c3Info=c3.getC3Info();
+        J2C3EmptyPanel c3=new J2C3EmptyPanel();
+        c3Info=c3.getJ2C3Panel();
         c3Info.setBounds(ScreenSize.scr_width*30/100, ScreenSize.scr_height*10/100, ScreenSize.scr_width*40/100, ScreenSize.scr_height*24/100);
+
 
         J2C4light c4=new J2C4light();
         JPanel j2c4Light=c4.light();

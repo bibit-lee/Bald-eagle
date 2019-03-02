@@ -28,6 +28,23 @@ public class TextFields {   //创建搜索框类
         j2ClientSearchField=new JTextField();
         j2ClientSearchField.setBorder(new EmptyBorder(0,ScreenSize.scr_width/100,0,ScreenSize.scr_width/100)); //文本框内容边距
         j2ClientSearchField.setFont(Fonts.getFontH1Bold());   //文本框从字体类获取字体
+
+        j2ClientSearchField.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                int i=e.getButton();
+                if (i==MouseEvent.BUTTON1){
+
+                    Jlayered2.c3Info.setBounds(ScreenSize.scr_width*30/100, ScreenSize.scr_height*10/100, ScreenSize.scr_width*40/100, ScreenSize.scr_height*60/100);
+                    J2C3OperationClient.emptyPanel.setVisible(true);
+                    J2C3OperationClient.topTransaction6.setVisible(true);
+
+
+                }
+            }
+        });
+
         Conn a=new Conn();
         con=a.getCon();
         //文本输入监听
@@ -113,21 +130,6 @@ public class TextFields {   //创建搜索框类
 
 
 
-        j2ClientSearchField.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent e) {
-                super.mousePressed(e);
-                int i=e.getButton();
-                if (i==MouseEvent.BUTTON1){
-
-                    Jlayered2.c3Info.setBounds(ScreenSize.scr_width*30/100, ScreenSize.scr_height*10/100, ScreenSize.scr_width*40/100, ScreenSize.scr_height*60/100);
-                    J2C3OperationClient.topTransaction6.setVisible(true);
-                    J2C3OperationClient.emptyPanel.setVisible(true);
-
-                }
-
-            }
-        });
 
         return j2ClientSearchField;
     }

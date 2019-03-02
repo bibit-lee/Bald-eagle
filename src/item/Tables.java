@@ -1,10 +1,7 @@
 package item;
 
 
-import jlayeredpanel.jlayered2.J2C3OperationClient;
-import jlayeredpanel.jlayered2.J2C4light;
-import jlayeredpanel.jlayered2.J2C5ViewPanel;
-import jlayeredpanel.jlayered2.Jlayered2;
+import jlayeredpanel.jlayered2.*;
 import phixma.MainFrame;
 
 import javax.swing.*;
@@ -90,8 +87,10 @@ public class Tables {
 
                     //如果表格行为空则返回-1，则选中范围将报错，使用不能为-1
                     if (i==MouseEvent.BUTTON1) {
+                        J2C3EmptyPanel.j2C3Panel.setVisible(false);
                         J2C3OperationClient.jPanel.setVisible(false);
                         J2C3OperationClient.emptyPanel.setVisible(false);
+                        J2C5ViewPanel.jPanel.setVisible(true);
                         Jlayered2.c3Info.setBounds(ScreenSize.scr_width*30/100, ScreenSize.scr_height*10/100,ScreenSize.scr_width*40/100,ScreenSize.scr_height*24/100);
                         J2C4light.lightPanel.setVisible(false);
                         MainFrame.light.setVisible(false);
@@ -104,6 +103,7 @@ public class Tables {
                         J2C5ViewPanel.addressTitle.setText("详细地址：");
                         J2C5ViewPanel.choiceLabel.setText(">");
                         J2C5ViewPanel.selectClient.setVisible(false);
+                        J2C5ViewPanel.selectCommodity.setVisible(true);
                         TextFields.j2ClientSearchField.setText("");
 
 

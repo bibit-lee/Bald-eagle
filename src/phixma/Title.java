@@ -1,8 +1,13 @@
 package phixma;
 
 import item.*;
+import jlayeredpanel.jlayered1.C2MainSearchPanel_2700;
+import jlayeredpanel.jlayered1.C3Light;
+import jlayeredpanel.jlayered2.J2C3EmptyPanel;
 import jlayeredpanel.jlayered2.J2C3OperationClient;
 import jlayeredpanel.jlayered2.J2C4light;
+import jlayeredpanel.jlayered2.J2C5ViewPanel;
+import phixma.frame.sell.OrderFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -143,14 +148,16 @@ public class Title {  //创建主窗体菜单类
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-
-                J2C4light.lightPanel.setVisible(true);
-                MainFrame.light.setVisible(true);
                 j1_Order.setForeground(new Color(255,255,255,255));
-                J2C3OperationClient.jPanel.setVisible(true);
-                J2C3OperationClient.emptyPanel.setVisible(false);
-                MainFrame.jlpn1.setVisible(false);
-                MainFrame.jlpn2.setVisible(true);
+                C2MainSearchPanel_2700.jPanel.setVisible(false);
+                C3Light.lightPanel.setVisible(true);
+                MainFrame.light.setVisible(true);
+                MainFrame.jFrame.setEnabled(false);
+
+                new OrderFrame();
+
+
+
 
             }
         });

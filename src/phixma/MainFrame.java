@@ -28,6 +28,7 @@ public class MainFrame extends JFrame{   //创建主窗体
                 "Roadster\n" +
                 "Energy");
         jFrame.setExtendedState(MAXIMIZED_BOTH);    //设置窗体展开方式
+        jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         container=jFrame.getContentPane();  //窗体添加内容面板作为容器
         SpringLayout springLayout=new SpringLayout();  //实例化弹簧布局管理器
         container.setLayout(springLayout);  //内容面板添加弹簧布局管理器

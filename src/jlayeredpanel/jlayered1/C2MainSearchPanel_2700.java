@@ -15,6 +15,7 @@ import java.awt.event.MouseEvent;
 
 
 public class C2MainSearchPanel_2700 {  //创建第一类第2层面板
+    public static JPanel jPanel;
 
     public JPanel mainSearchPanel(){  //第一类第2层面板实例方法
 
@@ -54,7 +55,7 @@ public class C2MainSearchPanel_2700 {  //创建第一类第2层面板
 
 
 
-        JPanel jPanel=new JPanel();  //实例化面板对象
+        jPanel=new JPanel();  //实例化面板对象
         jPanel.setLayout(null);  //图形坐标改变麻烦，取消布局管理器采用自由布局
         jPanel.setOpaque(false);  //设置面板透明
         jPanel.setBorder(new MainSearchBorder());  //绘制图形
